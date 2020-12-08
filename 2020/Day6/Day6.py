@@ -1,0 +1,1 @@
+print(*(lambda data: (sum(map(lambda group: len(set.union(set(group.replace("\n", "")))), data)), sum(map(lambda group: len(set.intersection(*map(set, group.split("\n")))), data))))(open("Day6.txt").read().split("\n\n")), sep = "\n")
