@@ -1,0 +1,1 @@
+print(*(lambda secret_key: (next((num for num in range(10**7) if __import__("hashlib").md5(("%s%d" % (secret_key, num)).encode()).hexdigest().startswith("00000"))), next((num for num in range(10**7) if __import__("hashlib").md5(("%s%d" % (secret_key, num)).encode()).hexdigest().startswith("000000")))))(open("Day4.txt").read()), sep = "\n")
