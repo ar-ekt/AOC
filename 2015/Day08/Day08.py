@@ -1,0 +1,1 @@
+print(*(lambda strings: map(lambda part: sum(map(lambda string: string.replace('\\\\', ('+', '++')[part]).replace('\\"', ('+', '++')[part]).replace('\\x', ('+++', '+')[part]).replace('"', ('+', '++')[part]).count("+"), strings)), (0, 1)))(open("Day08.txt").read().split("\n")), sep = "\n")
