@@ -1,0 +1,1 @@
+print(*(lambda data: (sum(map(lambda i: (lambda area: 2 * sum(area) + min(area))([i[0]*i[1], i[0]*i[2], i[1]*i[2]]), data)), sum(map(lambda i: 2 * (sum(i) - max(i)) + i[0]*i[1]*i[2], data))))(list(map(lambda line: list(map(int, line.split("x"))), open("Day2.txt").read().split("\n")))), sep = "\n")
