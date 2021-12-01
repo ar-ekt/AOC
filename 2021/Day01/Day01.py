@@ -1,1 +1,1 @@
-print(*(lambda depths: (sum(1 if depths[index] > depths[index-1] else 0 for index in range(1, len(depths))), sum(1 if depths[index] > depths[index-3] else 0 for index in range(3, len(depths)))))(list(map(int, open("Day01.txt").read().splitlines()))), sep="\n")
+print(*(lambda depths: map(lambda diff: sum(1 if depths[index] > depths[index-diff] else 0 for index in range(diff, len(depths))), (1, 3)))(list(map(int, open("Day01.txt").read().splitlines()))), sep="\n")
