@@ -1,0 +1,1 @@
+print(*(lambda pairs: (sum(map(lambda pair: (pair[0] <= pair[2] and pair[3] <= pair[1]) or (pair[2] <= pair[0] and pair[1] <= pair[3]), pairs)), sum(map(lambda pair: max(pair[0], pair[2]) <= min(pair[1], pair[3]), pairs))))(list(map(lambda pair: list(map(int, pair.replace('-', ',').split(','))), open('Day04.txt').read().splitlines()))), sep='\n')

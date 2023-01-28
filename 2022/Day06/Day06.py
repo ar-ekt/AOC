@@ -1,0 +1,1 @@
+print(*(lambda datastream, find: (find(datastream, message_length) for message_length in (4, 14)))(open('Day06.txt').read(), lambda datastream, message_length: next(index+message_length for index in range(len(datastream)-message_length+1) if len(set(datastream[index:index+message_length])) == message_length)), sep='\n')
